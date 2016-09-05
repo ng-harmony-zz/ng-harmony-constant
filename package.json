@@ -1,0 +1,42 @@
+{
+    "name": "ng-harmony-constant",
+    "description": "Global Constants like UX-Events",
+    "version": "0.1.0",
+    "homepage": "https://github.com/ng-harmony/ng-harmony-constant",
+    "author": {
+        "name": "Johannes Neugschwentner",
+        "email": "johannes.neugschwentner@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ng-harmony/ng-harmony-constant.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ng-harmony/ng-harmony-constant/issues"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/ng-harmony/ng-harmony-constant/blob/master/LICENSE"
+    }],
+    "main": "build/index.js",
+    "engines": {
+        "node": ">= 0.10.36",
+        "npm": ">=1.4.28"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "literate-programming src/ng_harmony.md && npm run modules",
+        "transpile_amd": "babel --modules amd -e 1 -s -o ./build/modules/amd_module.js ./build/index.js",
+        "transpile_common": "babel --modules common -e 1 -s -o ./build/modules/common_module.js ./build/index.js",
+        "transpile_system": "babel --modules system -e 1 -s -o ./build/modules/system_module.js ./build/index.js",
+        "transpile_umd": "babel --modules umd -e 1 -s -o ./build/modules/umd_module.js ./build/index.js",
+        "modules": "npm run transpile_amd && npm run transpile_common && npm run transpile_system && npm run transpile_umd"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-cli": "^6.5.1",
+        "babel-preset-stage-3": "^6.5.0",
+        "literate-programming": "^0.8.4"
+    },
+    "keywords": []
+}
