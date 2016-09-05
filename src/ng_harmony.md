@@ -5,11 +5,15 @@
 
 ![Harmony = 6 + 7;](logo.png "Harmony - Fire in my eyes")
 
-Please concoct a rather useful gist here ...
+Why?
+
+    * Easily retain event-names via your editors autocomplete
+    * Have a decent standard for further lib use of UX-Events (UX-decorator)
 
 ## Concept
 
-This extra lib to ng-harmony will serve the purpose of *[...]*
+It helps to be able to provide a UXEVENT.EVENTNAME `constant!!` instead of a
+"typo-errorable" string `variable!`
 
 Use it in conjunction with
 
@@ -26,34 +30,38 @@ You can extend these literate-programming directives here ... the manual is (on 
 
 ## Compilation
 
-Now just start coding/commenting as you go ...
+To bring eventing to the Controller ng-harmony introduces zepto.js since angularjs
+doesn't expose it's own Eventing. The include jQuery-Lite doesn't provide the
+necessary tools either ...
 
-You might want to
-* code on the fly
-* use literate-programming as a full paradigm of some super-constructor
-* switch back and forth between the dev/master and gh-pages branches and use TDD/BDD
-
-You'll probably want to import some base class of ng-harmony itself
+The UXEVENT constant holds the `hardcoded` proper event strings of zepto.js
 
 ```javascript
-import { Harmony, Controller, Service } from "ng-harmony/ng-harmony";
-```
-
-```javascript
-export class YourClass extends Harmony {
-    constructor(...args) {
-        super(...args);
-    }
-}
-YourClass.$inject = "$http";
-YourClass.$register = {
-    "yourNgModule": {
-        "name": "YourRegisteredClassName",
-        "type": "controller/service/factory/component"
-    }
-}
+export class UXEVENT {}
+UXEVENT.HOVER = "hover";
+UXEVENT.BLUR = "blur";
+UXEVENT.CHANGE = "change";
+UXEVENT.CLICK = "click";
+UXEVENT.DBLCLICK = "dblclick";
+UXEVENT.FOCUSIN = "focusin";
+UXEVENT.FOCUSOUT = "focusout";
+UXEVENT.KEYDOWN = "keydown";
+UXEVENT.KEYPRESS = "keypress";
+UXEVENT.KEYUP = "keyup";
+UXEVENT.MOUSEDOWN = "mousedown";
+UXEVENT.MOUSEENTER = "mouseenter";
+UXEVENT.MOUSELEAVE = "mouseleave";
+UXEVENT.MOUSEOUT = "mouseout";
+UXEVENT.MOUSEOVER = "mouseover";
+UXEVENT.MOUSEUP = "mouseup";
+UXEVENT.MOUSEMOVE = "mousemove";
+UXEVENT.RESIZE = "resize";
+UXEVENT.SCROLL = "scroll";
+UXEVENT.SELECT = "select";
+UXEVENT.SUBMIT = "submit";
+UXEVENT.UNLOAD = "unload";
 ```
 
 ## CHANGELOG
 
-*v0.1.0* Introducing cool features
+*v0.1.0* Zepto Event List (zepto.js is used in the ng-harmony-controller component)
